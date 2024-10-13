@@ -1,0 +1,71 @@
+.Header {
+    background-color: white;
+    /* Example gradient colors */
+    padding: 1.25rem 0.625rem;
+    /* 20px 10px converted to rem */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    opacity: 0.9;
+    gap: 2rem;
+    /* 10px converted to rem */
+}
+
+.Header-logo {
+    height: 7.5rem;
+    /* 120px converted to rem */
+}
+
+.Header-nav {
+    display: flex;
+    width: 30em;
+    padding-right: 2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    /* 20px converted to rem */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 37.5em) {
+    .Header {
+        padding-bottom: .1rem;
+        /* 20px 10px converted to rem */
+        gap: 1rem;
+        justify-content: center;
+        /* 10px converted to rem */
+    }
+
+    .Header-nav {
+        display: none;
+        /* Hide nav on mobile */
+    }
+
+    .Header-logo {
+        align-items: center;
+        height: 10rem;
+        margin-top: 2rem;
+        /* 80px converted to rem */
+    }
+
+    .nav-label {
+        display: none;
+        /* Hide labels on mobile */
+    }
+}

@@ -1,0 +1,97 @@
+body,
+html,
+#root,
+.App {
+    height: 80%;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    display: contents;
+    overflow: auto;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    height: 3.75rem;
+    /* 60px converted to rem */
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+}
+
+main {
+    flex: 1;
+    padding: 1.25rem;
+    /* 20px converted to rem */
+    margin-top: 3.75rem;
+    /* Add margin to push content below header */
+    overflow: hidden;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Footer component */
+footer {
+    background-color: transparent;
+    padding: 1.25rem;
+    /* 20px converted to rem */
+    text-align: center;
+    width: 100%;
+    height: 3.75rem;
+    display: none;
+    /* 60px converted to rem */
+}
+
+/* Copyright component */
+.copyright {
+    text-align: center;
+    padding: 0.625rem;
+    /* 10px converted to rem */
+    background-color: white;
+    opacity: 0.9;
+    /* Ensure it is above other elements */
+    /* Removed bottom: 0; to make it part of the normal document flow */
+}
+
+/* Hide scrollbar for WebKit browsers */
+main::-webkit-scrollbar {
+    display: none;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 37.5em) {
+
+    .Footer {
+        display: block;
+        /* Show footer */
+    }
+
+    .copyright {
+        margin-bottom: 4rem;
+    }
+
+    main {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+        overflow: -moz-scrollbars-none;
+        /* Firefox */
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling for iOS */
+    }
+
+    /* Hide scrollbar for WebKit browsers */
+    main::-webkit-scrollbar {
+        display: none;
+    }
+
+}

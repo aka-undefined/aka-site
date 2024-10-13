@@ -1,0 +1,38 @@
+.Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    /* 20px converted to rem */
+    max-width: 37.5rem;
+    /* 600px converted to rem */
+    margin: 0 auto;
+    padding-top: 5rem;
+    /* Add padding to the top to account for the fixed header */
+    text-align: center;
+}
+
+.Contact h1 {
+    margin-bottom: 1.25rem;
+    /* 20px converted to rem */
+}
+
+.Contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Contact ul li {
+    margin-bottom: 0.625rem;
+    /* 10px converted to rem */
+}
+
+.Contact a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.Contact a:hover {
+    text-decoration: underline;
+}

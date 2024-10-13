@@ -1,0 +1,25 @@
+{
+  "short_name": "@aka",
+  "name": "@Arun kumar anguraja",
+  "icons": [
+    {
+      "src": "@aka_c.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "@aka_c.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "@aka_c.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
