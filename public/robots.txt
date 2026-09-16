@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://aka-site.pages.dev/sitemap-index.xml
+Sitemap: https://aka-site.arunrgcet.workers.dev/sitemap-index.xml

@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: 'static',
-  // Change this to your custom domain once DNS points at Cloudflare Pages.
-  site: 'https://aka-site.pages.dev',
+  // Change this to your custom domain once DNS points at Cloudflare.
+  site: 'https://aka-site.arunrgcet.workers.dev',
   integrations: [sitemap()],
 });
