@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { CATEGORIES, categorySlug } from '../content.config';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+  activeCategory?: string;
+}
+
+const { posts, activeCategory } = Astro.props;
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<nav class="Blog-cats">
+  <a href="/myviews" class={activeCategory ? '' : 'is-active'}>All</a>
+  {
+    CATEGORIES.map((category) => (
+      <a
+        href={`/myviews/category/${categorySlug(category)}`}
+        class={activeCategory === category ? 'is-active' : ''}
+      >
+        {category}
+      </a>
+    ))
+  }
+</nav>
+
+{
+  posts.length === 0 ? (
+    <p class="Blog-empty">Nothing here yet.</p>
+  ) : (
+    <ul>
+      {posts.map((post) => (
+        <li>
+          <h2>
+            <a href={`/myviews/${post.id}`}>{post.data.title}</a>
+          </h2>
+          <span class="Blog-meta">
+            {formatDate(post.data.pubDate)}
+            {' · '}
+            <a class="Blog-cat" href={`/myviews/category/${categorySlug(post.data.category)}`}>
+              {post.data.category}
+            </a>
+            {post.data.draft && ' · draft'}
+          </span>
+          <p>{post.data.description}</p>
+          {post.data.tags.length > 0 && (
+            <span class="Blog-tags">{post.data.tags.join(' · ')}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  )
+}
