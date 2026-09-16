@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { categorySlug } from '../../content.config';
+import '../../styles/Blog.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => import.meta.env.PROD ? !data.draft : true);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formatted = post.data.pubDate.toLocaleDateString('en-IN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Layout
+  title={`${post.data.title} | @aka`}
+  description={post.data.description}
+  ogType="article"
+  publishedDate={post.data.pubDate}
+>
+  <article class="Blog-post">
+    <h1>{post.data.title}</h1>
+    <span class="Blog-meta">
+      {formatted}
+      {' · '}
+      <a class="Blog-cat" href={`/myviews/category/${categorySlug(post.data.category)}`}>
+        {post.data.category}
+      </a>
+      {post.data.draft && ' · draft'}
+    </span>
+    <Content />
+    <a class="Blog-back" href="/myviews">← Back to Thoughts</a>
+  </article>
+</Layout>

@@ -1,0 +1,31 @@
+---
+import homeIcon from '../assets/images/head-gear.svg';
+import contactIcon from '../assets/images/contact.svg';
+import speakIcon from '../assets/images/speak.svg';
+import '../styles/Footer.css';
+---
+
+<footer class="Footer">
+  <nav class="Footer-nav">
+    <ul>
+      <li>
+        <a href="/">
+          <img src={homeIcon.src} alt="" class="nav-icon" />
+          <span class="nav-label">Who I Am</span>
+        </a>
+      </li>
+      <li>
+        <a href="/myviews">
+          <img src={speakIcon.src} alt="" class="nav-icon" />
+          <span class="nav-label">Thoughts</span>
+        </a>
+      </li>
+      <li>
+        <a href="/contact">
+          <img src={contactIcon.src} alt="" class="nav-icon" />
+          <span class="nav-label">Let's Connect</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</footer>

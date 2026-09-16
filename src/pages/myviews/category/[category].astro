@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import PostList from '../../../components/PostList.astro';
+import { CATEGORIES, categorySlug } from '../../../content.config';
+import '../../../styles/Blog.css';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((category) => ({
+    params: { category: categorySlug(category) },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+
+const posts = (
+  await getCollection('blog', ({ data }) =>
+    data.category === category && (import.meta.env.PROD ? !data.draft : true)
+  )
+).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Layout
+  title={`${category} | Thoughts | @aka`}
+  description={`${category} writing by Arun Kumar Anguraja.`}
+>
+  <div class="Blog-list">
+    <h1>{category}</h1>
+    <PostList posts={posts} activeCategory={category} />
+  </div>
+</Layout>

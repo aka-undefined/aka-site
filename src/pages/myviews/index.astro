@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PostList from '../../components/PostList.astro';
+import '../../styles/MyViews.css';
+import '../../styles/Blog.css';
+
+const posts = (await getCollection('blog', ({ data }) => import.meta.env.PROD ? !data.draft : true))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Layout
+  title="Thoughts | @aka"
+  description="Perspectives and writing by Arun Kumar Anguraja on technology, society and everything in between."
+>
+  {
+    posts.length === 0 ? (
+      <div class="MyViews">
+        <h1>Thoughts</h1>
+        <p>My Perspectives Unveiling Soon!</p>
+      </div>
+    ) : (
+      <div class="Blog-list">
+        <h1>Thoughts</h1>
+        <PostList posts={posts} />
+      </div>
+    )
+  }
+</Layout>
