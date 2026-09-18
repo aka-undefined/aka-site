@@ -1,38 +1,117 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ExternalIcon from '../assets/images/icon-external.svg';
 import '../styles/About.css';
 ---
 
 <Layout
-  title="@aka"
-  description="Arun Kumar Anguraja - Principal Software Engineer based in Bangalore, working across SAP UI, .NET MAUI and Azure."
+  title="Arun Kumar Anguraja | @aka"
+  description="Arun Kumar Anguraja - Principal Software Engineer in Bangalore, working across SAP, .NET MAUI and Azure, and running a farm on the side."
 >
   <div class="About">
+    <h1>Arun Kumar Anguraja</h1>
     <p>
       I'm Arun Kumar Anguraja, a Principal Software Engineer based in Bangalore. I was born in a
-      small town near Salem, Tamil Nadu, and spent my early life in Pondicherry, where I completed
-      my B.Tech in Computer Science and Engineering.
+      small town near Salem, Tamil Nadu, and grew up in Pondicherry, where I completed my B.Tech in
+      Computer Science and Engineering.
     </p>
     <p>
-      Starting my career as an intern in Bangalore, I've spent the last ten years focusing on user
-      interface development, particularly with SAP. Recently, I've shifted my focus to Microsoft
-      technologies, including MAUI and Azure Cloud, and I hold certifications in Machine Learning
-      and AI.
+      Over the past twelve years, I've built a career around UI development — starting with SAPUI5
+      at Merck and SAP Labs, where I led projects spanning React, Node.js, and even a chatbot built
+      on Google's DialogFlow and Microsoft's LUIS. Since joining West Pharmaceutical Services in
+      2019 — first as Lead Software Engineer, now as Principal Software Engineer — I've shifted
+      focus toward Microsoft technologies, including .NET MAUI and Azure Cloud, and hold
+      certifications in Machine Learning and AI.
     </p>
     <p>
-      I'm passionate about problem-solving and technology, especially in the agricultural sector, as
-      I own a farm back home. My wife, who is also in IT, collaborates with me on farm tech
-      projects.
+      Technology and agriculture intersect in my life in a very literal way: I own a farm back home,
+      and my wife (also in IT) collaborates with me on farm-tech projects. It's where I get to apply
+      problem-solving to something outside a screen.
     </p>
     <p>
-      In my spare time, I enjoy traveling, cooking, and reading, starting with Ikigai. I'm
-      interested in politics and aspire to learn more about it, with hopes of joining a political
-      party in the future.
+      Outside of work, I travel, cook, and read — I started with <em>Ikigai</em> and haven't stopped
+      since.
     </p>
     <p>
-      Inspired by my boss, Nakul, and Elon Musk, I aim to become a solution architect and eventually
-      start my own technology company. My goal is to leverage technology to help society and promote
-      a world where kindness prevails.
+      My goal is to grow into a solution architect role and eventually build my own technology
+      company — one that uses tech to genuinely help people.
     </p>
+
+    <h2 class="About-heading">What I've Built</h2>
+
+    <div class="Work">
+      <article class="Work-item">
+        <h3>
+          Enterprise Platform — <a
+            href="https://www.westpharma.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >West Pharmaceutical Services<ExternalIcon class="Work-link-icon" aria-hidden="true"
+            /></a
+          >
+        </h3>
+        <p>
+          Led an enterprise application from the ground up, now used by 5,000+ employees. Built a
+          cross-platform .NET MAUI app with a companion config tool (cutting admin overhead 50%),
+          integrated SAP Logon and SAP APIs (boosting operational efficiency 25%), and digitized
+          100+ business processes (reducing manual effort 60%). Directing a team of 15 developers
+          across UI, ABAP, and Azure App Services. Completed an AI &amp; Deep Learning certification
+          (360DigiTMG) and launched AI-powered tools, boosting development productivity 15-20%.
+        </p>
+      </article>
+
+      <article class="Work-item">
+        <h3>
+          NEXTERP — <a
+            href="https://www.merckmillipore.com"
+            target="_blank"
+            rel="noopener noreferrer">Merck<ExternalIcon class="Work-link-icon" aria-hidden="true" /></a
+          >
+        </h3>
+        <p>
+          Led development of a cross-platform enterprise suite (60+ apps, 700+ modules) built on
+          SAPUI5, moving Merck's ERP experience to mobile, tablet, and web. Also built a full-stack
+          chatbot using Google DialogFlow and Microsoft LUIS.
+        </p>
+      </article>
+
+      <article class="Work-item">
+        <h3>
+          C3 (Customer Care Connect) — <a
+            href="https://www.lavamobiles.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Lava International<ExternalIcon class="Work-link-icon" aria-hidden="true" /></a
+          >
+        </h3>
+        <p>
+          Converted a legacy Web Dynpro CRM application to SAPUI5, cutting server load and tripling
+          application speed — while designing a secure custom login/password-reset flow.
+        </p>
+      </article>
+
+      <article class="Work-item">
+        <h3>
+          Apprentice Management — <a
+            href="https://www.sap.com"
+            target="_blank"
+            rel="noopener noreferrer">SAP Labs<ExternalIcon class="Work-link-icon" aria-hidden="true" /></a
+          >
+        </h3>
+        <p>
+          Optimized OData and DWR call performance for SAP SuccessFactors' employee central module,
+          supporting 1,000+ end users.
+        </p>
+      </article>
+
+      <article class="Work-item">
+        <h3>Farm-Tech Projects — Independent</h3>
+        <p>
+          Ongoing collaboration with my wife applying technology to agriculture on our family farm —
+          bridging enterprise software experience with real-world problem-solving outside the
+          corporate stack.
+        </p>
+      </article>
+    </div>
   </div>
 </Layout>

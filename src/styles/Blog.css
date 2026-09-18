@@ -1,20 +1,22 @@
 .Blog-list {
+    width: 100%;
     max-width: 42rem;
     margin: 0 auto;
     padding: 1.25rem;
 }
 
 .Blog-list h1 {
-    text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .Blog-cats {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1.25rem;
     margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
 }
 
 .Blog-cats a {
@@ -84,13 +86,15 @@
     font-size: .875rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    padding: 0.125rem 0.5rem;
+    padding: 0.3rem 0.85rem;
+    margin-top: 0.6rem;
     display: inline-block;
     background: var(--bg-raised);
 }
 
 /* Single post */
 .Blog-post {
+    width: 100%;
     max-width: 42rem;
     margin: 0 auto;
     padding: 1.25rem;
@@ -98,12 +102,10 @@
 }
 
 .Blog-post h1 {
-    text-align: center;
     margin-bottom: .25rem;
 }
 
 .Blog-post .Blog-meta {
-    text-align: center;
     display: block;
     margin-bottom: 2rem;
 }

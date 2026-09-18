@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import MailIcon from '../assets/images/icon-mail.svg';
+import PhoneIcon from '../assets/images/icon-phone.svg';
+import LinkedInIcon from '../assets/images/icon-linkedin.svg';
+import XIcon from '../assets/images/icon-x.svg';
 import '../styles/Contact.css';
 ---
 
@@ -10,10 +14,16 @@ import '../styles/Contact.css';
   <div class="Contact">
     <h1>Feel free to reach out</h1>
     <ul>
-      <li>Email: <a href="mailto:arunrgcet@gmail.com">arunrgcet@gmail.com</a></li>
-      <li>Phone: <a href="tel:+919741163046">+91 9741163046</a></li>
       <li>
-        LinkedIn:
+        <MailIcon class="contact-icon" role="img" aria-label="Email" />
+        <a href="mailto:arunrgcet@gmail.com">arunrgcet@gmail.com</a>
+      </li>
+      <li>
+        <PhoneIcon class="contact-icon" role="img" aria-label="Phone" />
+        <a href="tel:+918667688450">+91 8667688450</a>
+      </li>
+      <li>
+        <LinkedInIcon class="contact-icon" role="img" aria-label="LinkedIn" />
         <a
           href="https://www.linkedin.com/in/arun-kumar-anguraja"
           target="_blank"
@@ -21,7 +31,7 @@ import '../styles/Contact.css';
         >
       </li>
       <li>
-        X:
+        <XIcon class="contact-icon" role="img" aria-label="X" />
         <a href="https://x.com/arun_anguraja" target="_blank" rel="noopener noreferrer"
           >arun_anguraja</a
         >

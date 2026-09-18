@@ -1,7 +1,7 @@
 ---
-import homeIcon from '../assets/images/head-gear.svg';
-import contactIcon from '../assets/images/contact.svg';
-import speakIcon from '../assets/images/speak.svg';
+import HomeIcon from '../assets/images/head-gear.svg';
+import ContactIcon from '../assets/images/contact.svg';
+import SpeakIcon from '../assets/images/speak.svg';
 import '../styles/Footer.css';
 ---
 
@@ -10,19 +10,19 @@ import '../styles/Footer.css';
     <ul>
       <li>
         <a href="/">
-          <img src={homeIcon.src} alt="" class="nav-icon" />
+          <HomeIcon class="nav-icon" aria-hidden="true" />
           <span class="nav-label">Who I Am</span>
         </a>
       </li>
       <li>
         <a href="/myviews">
-          <img src={speakIcon.src} alt="" class="nav-icon" />
+          <SpeakIcon class="nav-icon" aria-hidden="true" />
           <span class="nav-label">Thoughts</span>
         </a>
       </li>
       <li>
         <a href="/contact">
-          <img src={contactIcon.src} alt="" class="nav-icon" />
+          <ContactIcon class="nav-icon" aria-hidden="true" />
           <span class="nav-label">Let's Connect</span>
         </a>
       </li>

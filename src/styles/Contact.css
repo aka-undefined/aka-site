@@ -1,16 +1,9 @@
 .Contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
-    /* 20px converted to rem */
-    max-width: 37.5rem;
-    /* 600px converted to rem */
+    width: 100%;
+    max-width: 42rem;
     margin: 0 auto;
-    padding-top: 5rem;
-    /* Add padding to the top to account for the fixed header */
-    text-align: center;
+    padding: 1.25rem;
+    line-height: 1.7;
 }
 
 .Contact h1 {
@@ -26,6 +19,16 @@
 .Contact ul li {
     margin-bottom: 0.625rem;
     /* 10px converted to rem */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.Contact .contact-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    color: var(--text-dim);
 }
 
 .Contact a {

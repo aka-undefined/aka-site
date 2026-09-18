@@ -1,23 +1,32 @@
 :root {
-  --bg: #0A0A0A;
-  --bg-raised: #131110;
-  --text: #EDEDE8;
-  --text-dim: #CFC7BE;
+  --bg: #1C1611;
+  --bg-raised: #26201A;
+  --text: #F0E9DE;
+  --text-dim: #A69C8D;
   --accent: #E8A33D;
   --accent-hover: #F2C14E;
   --accent-secondary: #C1652F;
-  --line: #2A2622;
+  --line: #3A322A;
+  --logo-color: #F5A623;
+  /* Header glass: same hue as --bg, with alpha */
+  --bg-translucent: rgba(28, 22, 17, 0.45);
 }
 
 html[data-theme='light'] {
-  --bg: #FAF7F2;
-  --bg-raised: #F0EBE1;
+  --bg: #FDFBF8;
+  --bg-raised: #F6F1E9;
   --text: #221D17;
   --text-dim: #6B6156;
-  --accent: #B87A1E;
-  --accent-hover: #9C6414;
+  --accent: #96620F;
+  --accent-hover: #7A4F0B;
   --accent-secondary: #A6491F;
   --line: #E3DACB;
+  --bg-translucent: rgba(253, 251, 248, 0.45);
+}
+
+html {
+  /* Reserve scrollbar space so page width never shifts between routes */
+  scrollbar-gutter: stable;
 }
 
 body {
