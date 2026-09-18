@@ -12,7 +12,9 @@ const isActive = (href: string) =>
 ---
 
 <header class="Header">
-  <AkaLogo class="Header-logo" role="img" aria-label="@aka logo" />
+  <a href="/" class="Header-logo-link" aria-label="@aka - home">
+    <AkaLogo class="Header-logo" aria-hidden="true" />
+  </a>
   <p class="Header-tagline">Code by day, farm by weekend.</p>
   <div class="Header-right">
     <nav class="Header-nav">
