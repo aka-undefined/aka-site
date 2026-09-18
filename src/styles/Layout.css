@@ -5,6 +5,8 @@ html,
     height: 80%;
     margin: 0;
     padding: 0;
+    background: var(--bg);
+    color: var(--text);
 }
 
 .App {
@@ -17,7 +19,8 @@ html,
 
 header {
     width: 100%;
-    background-color: white;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--line);
     height: 3.75rem;
     /* 60px converted to rem */
     z-index: 1000;
@@ -36,6 +39,8 @@ main {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    background: var(--bg);
+    color: var(--text);
 }
 
 /* Footer component */
@@ -55,7 +60,9 @@ footer {
     text-align: center;
     padding: 0.625rem;
     /* 10px converted to rem */
-    background-color: white;
+    background-color: var(--bg-raised);
+    color: var(--text-dim);
+    border-top: 1px solid var(--line);
     opacity: 0.9;
     /* Ensure it is above other elements */
     /* Removed bottom: 0; to make it part of the normal document flow */

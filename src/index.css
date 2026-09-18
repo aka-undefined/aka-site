@@ -1,5 +1,29 @@
+:root {
+  --bg: #0A0A0A;
+  --bg-raised: #131110;
+  --text: #EDEDE8;
+  --text-dim: #CFC7BE;
+  --accent: #E8A33D;
+  --accent-hover: #F2C14E;
+  --accent-secondary: #C1652F;
+  --line: #2A2622;
+}
+
+html[data-theme='light'] {
+  --bg: #FAF7F2;
+  --bg-raised: #F0EBE1;
+  --text: #221D17;
+  --text-dim: #6B6156;
+  --accent: #B87A1E;
+  --accent-hover: #9C6414;
+  --accent-secondary: #A6491F;
+  --line: #E3DACB;
+}
+
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

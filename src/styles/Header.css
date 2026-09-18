@@ -1,5 +1,6 @@
 .Header {
-    background-color: white;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--line);
     /* Example gradient colors */
     padding: 1.25rem 0.625rem;
     /* 20px 10px converted to rem */
@@ -39,7 +40,52 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--text-dim);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.25rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent);
+}
+
+nav ul li a.is-active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.Header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.ThemeToggle {
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    color: var(--text-dim);
+    border-radius: 999px;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.ThemeToggle:hover,
+.ThemeToggle:focus-visible {
+    color: var(--accent-hover);
+    border-color: var(--accent);
+}
+
+.ThemeToggle-icon {
+    font-size: 1rem;
+    line-height: 1;
 }
 
 /* Media query for mobile screens */
@@ -52,20 +98,10 @@ nav ul li a {
         /* 10px converted to rem */
     }
 
-    .Header-nav {
-        display: none;
-        /* Hide nav on mobile */
-    }
-
     .Header-logo {
         align-items: center;
         height: 10rem;
         margin-top: 2rem;
         /* 80px converted to rem */
-    }
-
-    .nav-label {
-        display: none;
-        /* Hide labels on mobile */
     }
 }

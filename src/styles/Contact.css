@@ -29,7 +29,7 @@
 }
 
 .Contact a {
-    color: #007bff;
+    color: var(--accent);
     text-decoration: none;
 }
 

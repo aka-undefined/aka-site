@@ -22,7 +22,17 @@ const canonical = Astro.site
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <script is:inline>
+      const storedTheme = localStorage.getItem('theme');
+      const preferredTheme =
+        storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.dataset.theme = preferredTheme;
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeMeta) {
+        themeMeta.setAttribute('content', preferredTheme === 'light' ? '#FAF7F2' : '#0A0A0A');
+      }
+    </script>
     <link rel="icon" href="/my-icons/@aka_c.svg" />
     <link rel="apple-touch-icon" href="/my-icons/@aka_c.svg" />
     <link rel="manifest" href="/manifest.json" />
