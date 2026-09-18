@@ -1,71 +1,153 @@
 .Header {
-    background-color: white;
-    /* Example gradient colors */
-    padding: 1.25rem 0.625rem;
-    /* 20px 10px converted to rem */
-    display: flex;
+    background-color: var(--bg-translucent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+    box-sizing: border-box;
+    height: 6rem;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    opacity: 0.9;
-    gap: 2rem;
-    /* 10px converted to rem */
+    gap: 1.25rem;
+}
+
+.Header-tagline {
+    justify-self: center;
+    /* Nudged left to offset the nav's greater visual weight */
+    transform: translateX(-2rem);
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.Header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
 }
 
 .Header-logo {
-    height: 7.5rem;
-    /* 120px converted to rem */
+    height: 5rem;
+    width: auto;
+    flex-shrink: 0;
+    color: var(--logo-color);
+}
+
+.Header-nav .nav-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
 }
 
 .Header-nav {
     display: flex;
-    width: 30em;
-    padding-right: 2em;
 }
 
-nav ul {
+.Header-nav ul {
     list-style: none;
     display: flex;
-    gap: 1.25rem;
-    /* 20px converted to rem */
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li {
+.Header-nav ul li {
     display: inline;
 }
 
-nav ul li a {
+.Header-nav ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--text);
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.25rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.Header-nav ul li a:hover,
+.Header-nav ul li a:focus-visible {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent);
+}
+
+.Header-nav ul li a.is-active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.ThemeToggle {
+    border: none;
+    background: none;
+    color: var(--text-dim);
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.ThemeToggle:hover,
+.ThemeToggle:focus-visible {
+    color: var(--accent-hover);
+}
+
+.ThemeToggle-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* Tagline needs ~800px before it starts squeezing the nav */
+@media (max-width: 56.25em) {
+    .Header-tagline {
+        display: none;
+    }
 }
 
 /* Media query for mobile screens */
 @media (max-width: 37.5em) {
     .Header {
-        padding-bottom: .1rem;
-        /* 20px 10px converted to rem */
-        gap: 1rem;
-        justify-content: center;
-        /* 10px converted to rem */
+        height: 9.5rem;
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        align-content: center;
+        justify-items: center;
+        gap: 0.25rem;
+    }
+
+    .Header-logo {
+        height: 6.5rem;
+    }
+
+    .Header-tagline {
+        /* Re-shown here, stacked under the logo */
+        display: block;
+        transform: none;
+        font-size: 0.8rem;
+    }
+
+    .Header-right {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .Header-nav {
         display: none;
-        /* Hide nav on mobile */
-    }
-
-    .Header-logo {
-        align-items: center;
-        height: 10rem;
-        margin-top: 2rem;
-        /* 80px converted to rem */
-    }
-
-    .nav-label {
-        display: none;
-        /* Hide labels on mobile */
+        /* Nav moves to the fixed bottom bar on mobile */
     }
 }

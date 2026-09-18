@@ -1,33 +1,81 @@
 ---
-import logo from '../assets/images/@aka_313.png';
-import homeIcon from '../assets/images/head-gear.svg';
-import contactIcon from '../assets/images/contact.svg';
-import speakIcon from '../assets/images/speak.svg';
+import AkaLogo from '../assets/images/aka-logo.svg';
+import HomeIcon from '../assets/images/head-gear.svg';
+import ContactIcon from '../assets/images/contact.svg';
+import SpeakIcon from '../assets/images/speak.svg';
 import '../styles/Header.css';
+
+const pathname = Astro.url.pathname;
+const currentPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath === href || currentPath.startsWith(`${href}/`);
 ---
 
 <header class="Header">
-  <img src={logo.src} class="Header-logo" alt="@aka logo" />
-  <nav class="Header-nav">
+  <AkaLogo class="Header-logo" role="img" aria-label="@aka logo" />
+  <p class="Header-tagline">Code by day, farm by weekend.</p>
+  <div class="Header-right">
+    <nav class="Header-nav">
     <ul>
       <li>
-        <a href="/">
-          <img src={homeIcon.src} alt="" class="nav-icon" />
+        <a href="/" class={isActive('/') ? 'is-active' : ''}>
+          <HomeIcon class="nav-icon" aria-hidden="true" />
           <span class="nav-label">Who I Am</span>
         </a>
       </li>
       <li>
-        <a href="/myviews">
-          <img src={speakIcon.src} alt="" class="nav-icon" />
+        <a href="/myviews" class={isActive('/myviews') ? 'is-active' : ''}>
+          <SpeakIcon class="nav-icon" aria-hidden="true" />
           <span class="nav-label">Thoughts</span>
         </a>
       </li>
       <li>
-        <a href="/contact">
-          <img src={contactIcon.src} alt="" class="nav-icon" />
-          <span class="nav-label">Let's Connect</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+          <a href="/contact" class={isActive('/contact') ? 'is-active' : ''}>
+            <ContactIcon class="nav-icon" aria-hidden="true" />
+            <span class="nav-label">Let's Connect</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <button
+      class="ThemeToggle"
+      type="button"
+      aria-label="Switch to light theme"
+      title="Toggle theme"
+    >
+      <span class="ThemeToggle-icon" aria-hidden="true">☀</span>
+    </button>
+  </div>
 </header>
+
+<script is:inline>
+  const toggle = document.querySelector('.ThemeToggle');
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+
+  const applyTheme = (theme) => {
+    document.documentElement.dataset.theme = theme;
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (e) {}
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'light' ? '#FDFBF8' : '#1C1611');
+    }
+    if (toggle) {
+      toggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+      toggle.setAttribute('title', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+      const icon = toggle.querySelector('.ThemeToggle-icon');
+      if (icon) {
+        icon.textContent = theme === 'light' ? '☾' : '☀';
+      }
+    }
+  };
+
+  if (toggle) {
+    const initialTheme = document.documentElement.dataset.theme || 'dark';
+    applyTheme(initialTheme);
+    toggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+  }
+</script>
