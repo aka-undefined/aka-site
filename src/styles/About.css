@@ -20,7 +20,10 @@
     font-weight: 600;
     color: var(--text);
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--line);
+    background-image: var(--rule-gradient);
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: 0 100%;
 }
 
 .Work-item {
