@@ -24,6 +24,12 @@ html[data-theme='light'] {
   --bg-translucent: rgba(253, 251, 248, 0.45);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   /* Reserve scrollbar space so page width never shifts between routes */
   scrollbar-gutter: stable;
