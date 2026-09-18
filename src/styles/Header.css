@@ -16,6 +16,13 @@
     gap: 1.25rem;
 }
 
+/* Without blur the tint alone leaves content under the header legible. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .Header {
+        background-color: var(--bg);
+    }
+}
+
 .Header-tagline {
     justify-self: center;
     /* Nudged left to offset the nav's greater visual weight */

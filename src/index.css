@@ -8,8 +8,9 @@
   --accent-secondary: #C1652F;
   --line: #3A322A;
   --logo-color: #F5A623;
-  /* Header glass: same hue as --bg, with alpha */
-  --bg-translucent: rgba(28, 22, 17, 0.45);
+  /* Header glass: same hue as --bg. Alpha stays high so text scrolling under
+     the header reads as a faint wash, not a legible ghost or a blurred smear. */
+  --bg-translucent: rgba(28, 22, 17, 0.88);
 }
 
 html[data-theme='light'] {
@@ -21,7 +22,7 @@ html[data-theme='light'] {
   --accent-hover: #7A4F0B;
   --accent-secondary: #A6491F;
   --line: #E3DACB;
-  --bg-translucent: rgba(253, 251, 248, 0.45);
+  --bg-translucent: rgba(253, 251, 248, 0.88);
 }
 
 *,
