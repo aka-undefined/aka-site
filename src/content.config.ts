@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-export const CATEGORIES = ['Political', 'Tech'] as const;
+export const CATEGORIES = ['Political', 'Tech', 'Finance'] as const;
 
 export const categorySlug = (category: string) => category.toLowerCase();
 
