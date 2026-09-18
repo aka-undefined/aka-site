@@ -16,7 +16,10 @@
     gap: 1.25rem;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--line);
+    background-image: var(--rule-gradient);
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: 0 100%;
 }
 
 .Blog-cats a {
@@ -82,14 +85,20 @@
 }
 
 .Blog-tags {
-    color: var(--accent-secondary);
+    color: var(--accent);
     font-size: .875rem;
-    border: 1px solid var(--line);
+    border: 1px solid transparent;
     border-radius: 999px;
     padding: 0.3rem 0.85rem;
     margin-top: 0.6rem;
     display: inline-block;
-    background: var(--bg-raised);
+    background: linear-gradient(var(--bg-raised), var(--bg-raised)) padding-box,
+        var(--rule-gradient) border-box;
+}
+
+/* The rust accent has enough contrast on the light pill, but not the dark one. */
+html[data-theme='light'] .Blog-tags {
+    color: var(--accent-secondary);
 }
 
 /* Single post */
